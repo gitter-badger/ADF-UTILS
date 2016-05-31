@@ -2,7 +2,7 @@
 <project
     xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>ru.javadev.adf.utils</groupId>
+    <groupId>org.javadev.adf.utils</groupId>
     <artifactId>ADF-Utils</artifactId>
     <version>1.0-SNAPSHOT</version>
     <description>Project for ADF-Utils</description>
