@@ -7,8 +7,6 @@ https://www.oracle.com/webapps/maven/register/license.html
 
     $ mkdir -p /home/<user_name>/.m2/
 
-<br/>
-
     $ vi /home/<user_name>/.m2/settings.xml
 
 <br/>  
