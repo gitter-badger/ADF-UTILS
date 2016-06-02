@@ -1,13 +1,15 @@
 # ADF-UTILS
 
+JDK, Maven should be installed.
+
 Before, you should accept license:  
 https://www.oracle.com/webapps/maven/register/license.html
 
 <br/>
 
-    $ mkdir -p /home/<user_name>/.m2/
+    $ mkdir -p /home/${USER}/.m2/
 
-    $ vi /home/<user_name>/.m2/settings.xml
+    $ vi /home/${USER}/.m2/settings.xml
 
 <br/>  
 
@@ -66,6 +68,12 @@ https://www.oracle.com/webapps/maven/register/license.html
 
     username - your oracle login  
     password - your oracle password
+
+<br/>
+
+    $ cd /tmp
+    $ git clone --depth=1 https://github.com/oracle-adf/ADF-UTILS
+    $ cd ADF-UTILS/
 
 <br/>
 
