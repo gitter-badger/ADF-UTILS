@@ -127,28 +127,7 @@
         </dependency>
         <dependency>
             <groupId>com.oracle.adf.library</groupId>
-            <artifactId>ADF-Common-Runtime</artifactId>
-            <version>12.2.1-0-0</version>
-            <type>pom</type>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.oracle.adf.library</groupId>
             <artifactId>ADF-Web-Runtime</artifactId>
-            <version>12.2.1-0-0</version>
-            <type>pom</type>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.oracle.adf.library</groupId>
-            <artifactId>MDS-Runtime</artifactId>
-            <version>12.2.1-0-0</version>
-            <type>pom</type>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.oracle.adf.library</groupId>
-            <artifactId>MDS-Runtime-Dependencies</artifactId>
             <version>12.2.1-0-0</version>
             <type>pom</type>
             <scope>provided</scope>
@@ -215,20 +194,6 @@
             <version>12.2.1-0-0</version>
             <type>pom</type>
             <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.oracle.adf.library</groupId>
-            <artifactId>ADF-Model-Runtime</artifactId>
-            <version>12.2.1-0-0</version>
-            <type>pom</type>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.oracle.adf.library</groupId>
-            <artifactId>Oracle-JDBC</artifactId>
-            <version>12.2.1-0-0</version>
-            <type>pom</type>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.oracle.adf.library</groupId>
