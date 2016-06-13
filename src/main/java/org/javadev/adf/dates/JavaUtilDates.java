@@ -5,6 +5,7 @@ import org.javadev.adf.dates.utils.DatesConverter;
 import java.util.GregorianCalendar;
 
 import org.javadev.adf.dates.periods.Months;
+import org.javadev.adf.dates.periods.Quarter;
 import org.javadev.adf.dates.periods.Weeks;
 import org.javadev.adf.dates.periods.Year;
 
@@ -88,6 +89,39 @@ public class JavaUtilDates {
     
     // --------------------------------------
     
+    // Quarter
+    
+    public static java.util.Date getFirstDayOfThisQuarter() {
+       return Quarter.getFirstDayOfQuarter(getToday());
+    }
+    
+    public static java.util.Date getLastDayOfThisQuarter() {
+        return Quarter.getLastDayOfQuarter(getToday());
+    }
+    
+    
+    // --------------------------------------
+    
+    public static java.util.Date getFirstDayOfPreviousQuarter() {
+       return Quarter.getFirstDayOfQuarter(DatesConverter.getOffsetMonths(getFirstDayOfThisQuarter(), -1));
+    }
+    
+    public static java.util.Date getLastDayOfPreviousQuarter() {
+        return Quarter.getLastDayOfQuarter(DatesConverter.getOffsetMonths(getFirstDayOfThisQuarter(), -1));
+    }
+    
+    // --------------------------------------
+    
+    public static java.util.Date getFirstDayOfNextQuarter() {
+       return Quarter.getFirstDayOfQuarter(DatesConverter.getOffsetMonths(getLastDayOfThisQuarter(), 1));
+    }
+    
+    public static java.util.Date getLastDayOfNextQuarter() {
+        return Quarter.getLastDayOfQuarter(DatesConverter.getOffsetMonths(getLastDayOfThisQuarter(), 1));
+    }
+
+    
+    // --------------------------------------
     
     // Years
     
@@ -119,8 +153,7 @@ public class JavaUtilDates {
     public static java.util.Date getLastDayOfNextYear() {
         return Year.getLastDayOfYear(DatesConverter.getOffsetYears(getToday(), 1));
     }
-    
-    // --------------------------------------
+
     
     // --------------------------------------
 

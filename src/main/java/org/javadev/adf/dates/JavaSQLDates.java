@@ -81,6 +81,41 @@ public class JavaSQLDates {
         return new java.sql.Date(JavaUtilDates.getLastDayOfNextMonth().getTime());
     }
     
+    
+    // ------------------------------------------------------
+        
+    // Year
+    
+    public static java.sql.Date getFirstDayOfThisQuarter() {
+        return new java.sql.Date(JavaUtilDates.getFirstDayOfThisQuarter().getTime());
+    }
+    
+    public static java.sql.Date getLastDayOfThisQuarter() {
+        return new java.sql.Date(JavaUtilDates.getLastDayOfThisQuarter().getTime());
+    }
+    
+    // ------------------------------------------------------
+    
+    public static java.sql.Date getFirstDayOfPreviousQuarter() {
+        return new java.sql.Date(JavaUtilDates.getFirstDayOfPreviousQuarter().getTime());
+    }
+    
+    public static java.sql.Date getLastDayOfPreviousQuarter() {
+        return new java.sql.Date(JavaUtilDates.getLastDayOfPreviousQuarter().getTime());
+    }
+    
+    // ------------------------------------------------------
+    
+    
+    public static java.sql.Date getFirstDayOfNextQuarter() {
+        return new java.sql.Date(JavaUtilDates.getFirstDayOfNextQuarter().getTime());
+    }
+    
+    public static java.sql.Date getLastDayOfNextQuarter() {
+        return new java.sql.Date(JavaUtilDates.getLastDayOfNextQuarter().getTime());
+    }
+
+    
     // ------------------------------------------------------
         
     // Year
@@ -161,6 +196,23 @@ public class JavaSQLDates {
         
         System.out.println(" First Day of Next Month: " + DatesConverter.getCurrentFormattedDate(getFirstDayOfNextMonth()));
         System.out.println(" Last Day of Next Month: " + DatesConverter.getCurrentFormattedDate(getLastDayOfNextMonth()));
+        
+        System.out.println();
+        System.out.println("Quarter:");
+        System.out.println();
+        
+        System.out.println(" First Day of This Quarter: " + DatesConverter.getCurrentFormattedDate(getFirstDayOfThisQuarter()));
+        System.out.println(" Last Day of This Quarter: " + DatesConverter.getCurrentFormattedDate(getLastDayOfThisQuarter()));
+        
+        System.out.println();
+        
+        System.out.println(" First Day of Previous Quarter: " + DatesConverter.getCurrentFormattedDate(getFirstDayOfPreviousQuarter()));
+        System.out.println(" Last Day of Previous Quarter: " + DatesConverter.getCurrentFormattedDate(getLastDayOfPreviousQuarter()));
+        
+        System.out.println();
+        
+        System.out.println(" First Day of Next Quarter: " + DatesConverter.getCurrentFormattedDate(getFirstDayOfNextQuarter()));
+        System.out.println(" Last Day of Next Quarter: " + DatesConverter.getCurrentFormattedDate(getLastDayOfNextQuarter()));
         
         System.out.println();
         System.out.println("Year:");
