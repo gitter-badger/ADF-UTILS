@@ -83,6 +83,17 @@ public class DatesConverter {
            return (cal.getTime());
        } //getTodayOffsetYears
 
+
+       //Get input date offset by years
+       public static Date getOffsetYears(Date date, int years) {
+           Calendar cal = Calendar.getInstance();
+           cal.setTime(date);
+           cal.add(Calendar.YEAR, years);
+           return (cal.getTime());
+       } //getOffsetYears
+
+       // -----------------------------------------
+       
        //Get today's date offset by dates, months, years
        public static Date getTodayOffsetDaysMonthsYears(int days, int months, int years) {
            Calendar cal = Calendar.getInstance();

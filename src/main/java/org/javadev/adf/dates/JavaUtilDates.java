@@ -4,8 +4,9 @@ import java.util.Calendar;
 import org.javadev.adf.dates.utils.DatesConverter;
 import java.util.GregorianCalendar;
 
-import org.javadev.adf.dates.periods.JavaUtilPeriodMonths;
-import org.javadev.adf.dates.periods.JavaUtilPeriodWeek;
+import org.javadev.adf.dates.periods.Months;
+import org.javadev.adf.dates.periods.Weeks;
+import org.javadev.adf.dates.periods.Year;
 
 
 public class JavaUtilDates {
@@ -27,63 +28,99 @@ public class JavaUtilDates {
     // Week
     
     public static java.util.Date getFirstDayOfThisWeek() {
-       return JavaUtilPeriodWeek.getFirstDayOfWeek(getToday());
+       return Weeks.getFirstDayOfWeek(getToday());
     }
     
     public static java.util.Date getLastDayOfThisWeek() {
-        return JavaUtilPeriodWeek.getLastDayOfWeek(getToday());
+        return Weeks.getLastDayOfWeek(getToday());
     }
     
     // --------------------------------------
     
     public static java.util.Date getFirstDayOfPreviousWeek() {
-       return JavaUtilPeriodWeek.getFirstDayOfWeek(DatesConverter.getOffsetDays(getFirstDayOfThisWeek(), -2));
+       return Weeks.getFirstDayOfWeek(DatesConverter.getOffsetDays(getFirstDayOfThisWeek(), -2));
     }
     
     public static java.util.Date getLastDayOfPreviousWeek() {
-        return JavaUtilPeriodWeek.getLastDayOfWeek(DatesConverter.getOffsetDays(getFirstDayOfThisWeek(), -2));
+        return Weeks.getLastDayOfWeek(DatesConverter.getOffsetDays(getFirstDayOfThisWeek(), -2));
     }
     
     // --------------------------------------
     
     public static java.util.Date getFirstDayOfNextWeek() {
-       return JavaUtilPeriodWeek.getFirstDayOfWeek(DatesConverter.getOffsetDays(getLastDayOfThisWeek(), 1));
+       return Weeks.getFirstDayOfWeek(DatesConverter.getOffsetDays(getLastDayOfThisWeek(), 1));
     }
     
     public static java.util.Date getLastDayOfNextWeek() {
-        return JavaUtilPeriodWeek.getLastDayOfWeek(DatesConverter.getOffsetDays(getLastDayOfThisWeek(), 1));
+        return Weeks.getLastDayOfWeek(DatesConverter.getOffsetDays(getLastDayOfThisWeek(), 1));
     }
     
     
     // Months
     
     public static java.util.Date getFirstDayOfThisMonth() {
-       return JavaUtilPeriodMonths.getFirstDayOfMonth(getToday());
+       return Months.getFirstDayOfMonth(getToday());
     }
     
     public static java.util.Date getLastDayOfThisMonth() {
-        return JavaUtilPeriodMonths.getLastDayOfMonth(getToday());
+        return Months.getLastDayOfMonth(getToday());
     }
     
     // --------------------------------------
     
     public static java.util.Date getFirstDayOfPreviousMonth() {
-       return JavaUtilPeriodMonths.getFirstDayOfMonth(DatesConverter.getOffsetMonths(getToday(), -1));
+       return Months.getFirstDayOfMonth(DatesConverter.getOffsetMonths(getToday(), -1));
     }
     
     public static java.util.Date getLastDayOfPreviousMonth() {
-        return JavaUtilPeriodMonths.getLastDayOfMonth(DatesConverter.getOffsetMonths(getToday(), -1));
+        return Months.getLastDayOfMonth(DatesConverter.getOffsetMonths(getToday(), -1));
     }
     
     // --------------------------------------
     
     public static java.util.Date getFirstDayOfNextMonth() {
-       return JavaUtilPeriodMonths.getFirstDayOfMonth(DatesConverter.getOffsetMonths(getToday(), 1));
+       return Months.getFirstDayOfMonth(DatesConverter.getOffsetMonths(getToday(), 1));
     }
     
     public static java.util.Date getLastDayOfNextMonth() {
-        return JavaUtilPeriodMonths.getLastDayOfMonth(DatesConverter.getOffsetMonths(getToday(), 1));
+        return Months.getLastDayOfMonth(DatesConverter.getOffsetMonths(getToday(), 1));
     }
+    
+    // --------------------------------------
+    
+    
+    // Years
+    
+    public static java.util.Date getFirstDayOfThisYear() {
+       return Year.getFirstDayOfYear(getToday());
+    }
+    
+    public static java.util.Date getLastDayOfThisYear() {
+        return Year.getLastDayOfYear(getToday());
+    }
+    
+    
+    // --------------------------------------
+    
+    public static java.util.Date getFirstDayOfPreviousYear() {
+       return Year.getFirstDayOfYear(DatesConverter.getOffsetYears(getToday(), -1));
+    }
+    
+    public static java.util.Date getLastDayOfPreviousYear() {
+        return Year.getLastDayOfYear(DatesConverter.getOffsetYears(getToday(), -1));
+    }
+    
+    // --------------------------------------
+    
+    public static java.util.Date getFirstDayOfNextYear() {
+       return Year.getFirstDayOfYear(DatesConverter.getOffsetYears(getToday(), 1));
+    }
+    
+    public static java.util.Date getLastDayOfNextYear() {
+        return Year.getLastDayOfYear(DatesConverter.getOffsetYears(getToday(), 1));
+    }
+    
+    // --------------------------------------
     
     // --------------------------------------
 

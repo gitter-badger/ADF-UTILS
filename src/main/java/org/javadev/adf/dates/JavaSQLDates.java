@@ -82,6 +82,39 @@ public class JavaSQLDates {
     }
     
     // ------------------------------------------------------
+        
+    // Year
+    
+    public static java.sql.Date getFirstDayOfThisYear() {
+        return new java.sql.Date(JavaUtilDates.getFirstDayOfThisYear().getTime());
+    }
+    
+    public static java.sql.Date getLastDayOfThisYear() {
+        return new java.sql.Date(JavaUtilDates.getLastDayOfThisYear().getTime());
+    }
+    
+    // ------------------------------------------------------
+    
+    public static java.sql.Date getFirstDayOfPreviousYear() {
+        return new java.sql.Date(JavaUtilDates.getFirstDayOfPreviousYear().getTime());
+    }
+    
+    public static java.sql.Date getLastDayOfPreviousYear() {
+        return new java.sql.Date(JavaUtilDates.getLastDayOfPreviousYear().getTime());
+    }
+    
+    // ------------------------------------------------------
+    
+    
+    public static java.sql.Date getFirstDayOfNextYear() {
+        return new java.sql.Date(JavaUtilDates.getFirstDayOfNextYear().getTime());
+    }
+    
+    public static java.sql.Date getLastDayOfNextYear() {
+        return new java.sql.Date(JavaUtilDates.getLastDayOfNextYear().getTime());
+    }
+    
+    // ------------------------------------------------------
     
     
         
@@ -128,6 +161,24 @@ public class JavaSQLDates {
         
         System.out.println(" First Day of Next Month: " + DatesConverter.getCurrentFormattedDate(getFirstDayOfNextMonth()));
         System.out.println(" Last Day of Next Month: " + DatesConverter.getCurrentFormattedDate(getLastDayOfNextMonth()));
+        
+        System.out.println();
+        System.out.println("Year:");
+        System.out.println();
+        
+        System.out.println(" First Day of This Year: " + DatesConverter.getCurrentFormattedDate(getFirstDayOfThisYear()));
+        System.out.println(" Last Day of This Year: " + DatesConverter.getCurrentFormattedDate(getLastDayOfThisYear()));
+        
+        System.out.println();
+        
+        System.out.println(" First Day of Previous Year: " + DatesConverter.getCurrentFormattedDate(getFirstDayOfPreviousYear()));
+        System.out.println(" Last Day of Previous Year: " + DatesConverter.getCurrentFormattedDate(getLastDayOfPreviousYear()));
+        
+        System.out.println();
+        
+        System.out.println(" First Day of Next Year: " + DatesConverter.getCurrentFormattedDate(getFirstDayOfNextYear()));
+        System.out.println(" Last Day of Next Year: " + DatesConverter.getCurrentFormattedDate(getLastDayOfNextYear()));
+        
 
     }
     

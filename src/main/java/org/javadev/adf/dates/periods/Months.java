@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 
-public class JavaUtilPeriodMonths {
+public class Months {
     
     public static java.util.Date getFirstDayOfMonth(java.util.Date date) {
         

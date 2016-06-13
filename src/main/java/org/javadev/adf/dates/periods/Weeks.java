@@ -5,7 +5,7 @@ import java.util.GregorianCalendar;
 
 import org.javadev.adf.dates.utils.DatesConverter;
 
-public class JavaUtilPeriodWeek {
+public class Weeks {
     
     
     public static java.util.Date getFirstDayOfWeek(java.util.Date date) {
