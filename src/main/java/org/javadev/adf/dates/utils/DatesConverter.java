@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.javadev.adf.dates.CONSTANTS_DATES;
 import org.javadev.adf.dates.JavaUtilDates;
 
 public class DatesConverter {
@@ -24,7 +25,7 @@ public class DatesConverter {
     
     //Format "MMMMM dd, yyyy"
     public static String getCurrentFormattedDate(java.sql.Date date) {
-        return getFormattedDate(date, "dd-MM-yyyy");
+        return getFormattedDate(date, CONSTANTS_DATES.OutputDateFormat);
     } //getCurrentFormattedDate
     
     //Format Example - "d MMM yyyy", "d MMM yyyy hh:mm aaa"
@@ -62,6 +63,17 @@ public class DatesConverter {
            cal.add(Calendar.MONTH, months);
            return (cal.getTime());
        } //getTodayOffsetMonths
+       
+       
+       //Get input date offset by months
+       public static Date getOffsetMonths(Date date, int months) {
+           Calendar cal = Calendar.getInstance();
+           cal.setTime(date);
+           cal.add(Calendar.MONTH, months);
+           return (cal.getTime());
+       } //getOffsetMonths
+       
+       // -----------------------------------------
 
        //Get today's date offset by years
        public static Date getTodayOffsetYears(int years) {

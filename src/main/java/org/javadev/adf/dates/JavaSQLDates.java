@@ -50,6 +50,40 @@ public class JavaSQLDates {
     
     // ------------------------------------------------------
         
+    // Months
+    
+    public static java.sql.Date getFirstDayOfThisMonth() {
+        return new java.sql.Date(JavaUtilDates.getFirstDayOfThisMonth().getTime());
+    }
+    
+    public static java.sql.Date getLastDayOfThisMonth() {
+        return new java.sql.Date(JavaUtilDates.getLastDayOfThisMonth().getTime());
+    }
+    
+    // ------------------------------------------------------
+    
+    public static java.sql.Date getFirstDayOfPreviousMonth() {
+        return new java.sql.Date(JavaUtilDates.getFirstDayOfPreviousMonth().getTime());
+    }
+    
+    public static java.sql.Date getLastDayOfPreviousMonth() {
+        return new java.sql.Date(JavaUtilDates.getLastDayOfPreviousMonth().getTime());
+    }
+    
+    // ------------------------------------------------------
+    
+    
+    public static java.sql.Date getFirstDayOfNextMonth() {
+        return new java.sql.Date(JavaUtilDates.getFirstDayOfNextMonth().getTime());
+    }
+    
+    public static java.sql.Date getLastDayOfNextMonth() {
+        return new java.sql.Date(JavaUtilDates.getLastDayOfNextMonth().getTime());
+    }
+    
+    // ------------------------------------------------------
+    
+    
         
     public static void printAllDates() {
 
@@ -77,6 +111,23 @@ public class JavaSQLDates {
         
         System.out.println(" First Day of Next Week: " + DatesConverter.getCurrentFormattedDate(getFirstDayOfNextWeek()));
         System.out.println(" Last Day of Next Week: " + DatesConverter.getCurrentFormattedDate(getLastDayOfNextWeek()));
+        
+        System.out.println();
+        System.out.println("Months:");
+        System.out.println();
+        
+        System.out.println(" First Day of This Month: " + DatesConverter.getCurrentFormattedDate(getFirstDayOfThisMonth()));
+        System.out.println(" Last Day of This Month: " + DatesConverter.getCurrentFormattedDate(getLastDayOfThisMonth()));
+        
+        System.out.println();
+        
+        System.out.println(" First Day of Previous Month: " + DatesConverter.getCurrentFormattedDate(getFirstDayOfPreviousMonth()));
+        System.out.println(" Last Day of Previous Month: " + DatesConverter.getCurrentFormattedDate(getLastDayOfPreviousMonth()));
+        
+        System.out.println();
+        
+        System.out.println(" First Day of Next Month: " + DatesConverter.getCurrentFormattedDate(getFirstDayOfNextMonth()));
+        System.out.println(" Last Day of Next Month: " + DatesConverter.getCurrentFormattedDate(getLastDayOfNextMonth()));
 
     }
     
