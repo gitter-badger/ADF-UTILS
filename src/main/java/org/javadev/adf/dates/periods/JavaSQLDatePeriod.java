@@ -1,4 +1,4 @@
-package org.javadev.adf.dates;
+package org.javadev.adf.dates.periods;
 
 import java.sql.Date;
 

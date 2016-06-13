@@ -23,7 +23,7 @@ public class JavaUtilDates {
        return DatesConverter.getTodayOffsetDays(1);
     }
     
-    // --------------------------------------
+    // Week
     
     public static java.util.Date getFirstDayOfThisWeek() {
        return JavaUtilPeriodWeek.getFirstDayOfWeek(getToday());
@@ -31,6 +31,26 @@ public class JavaUtilDates {
     
     public static java.util.Date getLastDayOfThisWeek() {
         return JavaUtilPeriodWeek.getLastDayOfWeek(getToday());
+    }
+    
+    // --------------------------------------
+    
+    public static java.util.Date getFirstDayOfPreviousWeek() {
+       return JavaUtilPeriodWeek.getFirstDayOfWeek(DatesConverter.getOffsetDays(getFirstDayOfThisWeek(), -3));
+    }
+    
+    public static java.util.Date getLastDayOfPreviousWeek() {
+        return JavaUtilPeriodWeek.getLastDayOfWeek(DatesConverter.getOffsetDays(getFirstDayOfThisWeek(), -3));
+    }
+    
+    // --------------------------------------
+    
+    public static java.util.Date getFirstDayOfNextWeek() {
+       return JavaUtilPeriodWeek.getFirstDayOfWeek(DatesConverter.getOffsetDays(getLastDayOfThisWeek(), 1));
+    }
+    
+    public static java.util.Date getLastDayOfNextWeek() {
+        return JavaUtilPeriodWeek.getLastDayOfWeek(DatesConverter.getOffsetDays(getLastDayOfThisWeek(), 1));
     }
 
 

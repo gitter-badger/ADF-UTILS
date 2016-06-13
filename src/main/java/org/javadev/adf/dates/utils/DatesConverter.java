@@ -1,5 +1,7 @@
 package org.javadev.adf.dates.utils;
 
+import java.text.SimpleDateFormat;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -18,6 +20,18 @@ public class DatesConverter {
 
     }
     
+    ////////////////////////////////////////////////////
+    
+    //Format "MMMMM dd, yyyy"
+    public static String getCurrentFormattedDate(java.sql.Date date) {
+        return getFormattedDate(date, "dd-MM-yyyy");
+    } //getCurrentFormattedDate
+    
+    //Format Example - "d MMM yyyy", "d MMM yyyy hh:mm aaa"
+    public static String getFormattedDate(Date date, String format) {
+          SimpleDateFormat sdf = new SimpleDateFormat(format);
+          return sdf.format(date);
+    } //getFormattedDate
     
     ////////////////////////////////////////////////////
     
@@ -29,6 +43,17 @@ public class DatesConverter {
            cal.add(Calendar.DATE, days);
            return (cal.getTime());
        } //getTodayOffsetDays
+       
+       //Get input date offset by days
+       public static Date getOffsetDays(Date date, int days) {
+           Calendar cal = Calendar.getInstance();
+           cal.setTime(date);
+           cal.add(Calendar.DATE, days);
+           
+           return cal.getTime();
+       } //getOffsetDays
+
+        // ----------------------------
 
        //Get today's date offset by months
        public static Date getTodayOffsetMonths(int months) {

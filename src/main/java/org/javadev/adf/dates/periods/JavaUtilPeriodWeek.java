@@ -7,9 +7,10 @@ import org.javadev.adf.dates.utils.DatesConverter;
 
 public class JavaUtilPeriodWeek {
     
+    
     public static java.util.Date getFirstDayOfWeek(java.util.Date date) {
         
-        Calendar cal = Calendar.getInstance();
+        Calendar cal = new GregorianCalendar();
         cal.setTime(date);
 
         int day_of_week = (cal.get(Calendar.DAY_OF_WEEK) - 2);
@@ -20,13 +21,14 @@ public class JavaUtilPeriodWeek {
             new GregorianCalendar(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
     
         DatesConverter.clearGregorianCalendarTime(first_day_of_week);
+        
         return first_day_of_week.getTime();
     }
     
     
     public static java.util.Date getLastDayOfWeek(java.util.Date date) {
         
-        Calendar cal = Calendar.getInstance();
+        Calendar cal = new GregorianCalendar();
         cal.setTime(date);
 
         int day_of_week = (8 - cal.get(Calendar.DAY_OF_WEEK));
