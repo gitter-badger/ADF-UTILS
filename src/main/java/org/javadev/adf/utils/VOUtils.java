@@ -1,107 +1,110 @@
 package org.javadev.adf.utils;
 
 import oracle.jbo.ApplicationModule;
+import oracle.jbo.ViewCriteriaManager;
 import oracle.jbo.ViewObject;
-import oracle.jbo.VariableValueManager;
-import oracle.jbo.Variable;
-import oracle.jbo.Row;
+
+import org.javadev.adf.utils.vo.CONSTANTS_VO;
+import org.javadev.adf.utils.vo.impl.VCUtilsImpl;
+import org.javadev.adf.utils.vo.impl.VOUtilsImpl;
 
 public class VOUtils {
-    
-    
+
     ///////////////////////////////////////////////
     // View Objects
     ///////////////////////////////////////////////
     
     // Print
     
-    
     public static void printViewObjectInfo(String voName){
         printViewObjectInfo(getViewObjectByName(voName));
     }
     
     public static void printViewObjectInfo(ViewObject vo){
-       System.out.println();
-       System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-       System.out.println("# ViewObject : " + vo.getName());
-       
-       printViewObjectSQLQuery(vo);
-       printViewObjectVariables(vo);
-       printViewObjectData(vo);
-       
-       System.out.println();
-       System.out.println("ViewObject : " + vo.getName());
-       System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-    }
-    
-    private static void printViewObjectSQLQuery(ViewObject vo){
-           System.out.println();
-           System.out.println("==================");
-           System.out.println("=== Query: ====");
-           System.out.println(vo.getQuery());
-           System.out.println("==================");
-    }
-    
-    private static void printViewObjectVariables(ViewObject vo) {
-        VariableValueManager ensureVariableManager = vo.ensureVariableManager();
-        Variable[] lVariables = ensureVariableManager.getVariables();
-        int count = ensureVariableManager.getVariableCount();
-
-        // if variables found dump them
-        if (count > 0)
-        {
-            
-            System.out.println();
-            System.out.println("  Variables:");
-            System.out.println();
-            
-            for (int ii = 0; ii < count; ii++)
-            {
-                Object lObject = ensureVariableManager.getVariableValue(lVariables[ii]);
-                System.out.println("\t# Name: " + lVariables[ii].getName() + " Value: " +
-                                   (lObject != null ?  lObject.toString() : "null"));
-            }
-        }
-    }
-    
-    
-    private static void printViewObjectData(ViewObject vo){
-           System.out.println();
-           System.out.println("=== ViewObject DATA =====");
-           System.out.println("Rows Count " + vo.getRowCount());
-           
-           vo.reset();
-           vo.first();
-           
-        System.out.println("=== VO DATA =====");
-
-           while (vo.getCurrentRow() != null) {
-               
-                Row row = vo.getCurrentRow();
-                String rowDataStr = "";
-               
-                int numAttrs = vo.getAttributeCount();
-               
-                for (int columnNo = 0; columnNo < numAttrs; columnNo++){
-                     Object attrData = row.getAttribute(columnNo);
-                     rowDataStr += (attrData + "\t");
-                  }
-               
-                  System.out.println((vo.getCurrentRowIndex() + 1) + ") " + rowDataStr);
-               
-               vo.next();
-            }
-
-            System.out.println("=== NO MORE DATA =====");
+       VOUtilsImpl.printViewObjectInfo(vo);
     }
     
     // GET
         
     public static ViewObject getViewObjectByName(String ViewObjectName) {
-        ApplicationModule am = ADFUtils.getApplicationModuleForDataControl("AppModuleDataControl");
+        ApplicationModule am = ADFUtils.getApplicationModuleForDataControl(CONSTANTS_VO.AppModuleName);
         ViewObject vo = am.findViewObject(ViewObjectName); 
         return vo;
     }
     
     
+    ///////////////////////////////////////////////
+    // View Criterias
+    ///////////////////////////////////////////////
+    
+    
+    public static void printViewCriteriaNames(String voName){
+            printViewCriteriaNames(getViewObjectByName(voName));
+    }
+    
+    public static void printViewCriteriaNames(ViewObject vo) {
+        VCUtilsImpl.printViewCriteriaNames(vo);
+    }
+    
+    public static void printApplyViewCriteriaNames(String voName){
+            printApplyViewCriteriaNames(getViewObjectByName(voName));
+    }
+    
+    public static void printApplyViewCriteriaNames(ViewObject vo) {
+        VCUtilsImpl.printApplyViewCriteriaNames(vo);
+    }
+    
+    
+//    // GET
+//    
+//    public static ViewCriteria getViewCriteriaByName(ViewObject vo, String vcName) {
+//    }   
+//    
+//    // ADD
+//    
+//    public static void addViewCriteria(ViewObject vo, String vcName) {
+//    }   
+//    
+//    
+//    // Clear
+//    
+//    public static void clearViewCriteriaByName(String voName, String viewCriteriaForDeletion) {
+//    }
+//    
+//    public static void clearViewCriteriaByName(ViewObject vo, String viewCriteriaForDeletion) {
+//    }
+//    
+//
+//    public static void clearViewCriteriaByNameAndExecuteViewObject(ViewObject vo, String viewCriteriaForDeletion) {
+//    }
+//    
+//    public static void clearViewCriteriaByNameAndExecuteViewObject(String viewObjectName, String viewCriteriaForDeletion) {
+//    }
+//    
+//    
+//    public static void clearCutternViewCriterias(ViewObject vo) {
+//    }
+//    
+//    public static void clearCutternViewCriteriasAndExecuteViewObject (ViewObject vo) {
+//    }
+//    
+//    
+//    ///////////////////////////////////////////////
+//    // Where Clauses
+//    ///////////////////////////////////////////////
+//    
+//    public static void printWhereClause (ViewObject vo) {
+//    }
+//    
+//    
+//    public static void applyWhereClauseToViewObjectAndExecuteViewObject (ViewObject vo, String WhereClause) {
+//    }
+//    
+//    public static void clearWhereClauseToViewObject (ViewObject vo) {
+//    }
+//    
+//    public static void clearWhereClauseToViewObjectAndExecuteViewObject (ViewObject vo) {
+//    }
+    
+
 } // The End of Class;
