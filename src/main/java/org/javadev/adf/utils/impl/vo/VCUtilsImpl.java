@@ -1,4 +1,4 @@
-package org.javadev.adf.utils.vo.impl;
+package org.javadev.adf.utils.impl.vo;
 
 import java.util.Iterator;
 import java.util.List;

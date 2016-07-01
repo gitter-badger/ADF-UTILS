@@ -4,9 +4,9 @@ import oracle.jbo.ApplicationModule;
 import oracle.jbo.ViewCriteriaManager;
 import oracle.jbo.ViewObject;
 
-import org.javadev.adf.utils.vo.CONSTANTS_VO;
-import org.javadev.adf.utils.vo.impl.VCUtilsImpl;
-import org.javadev.adf.utils.vo.impl.VOUtilsImpl;
+import org.javadev.adf.utils.impl.vo.CONSTANTS_VO;
+import org.javadev.adf.utils.impl.vo.VCUtilsImpl;
+import org.javadev.adf.utils.impl.vo.VOUtilsImpl;
 
 public class VOUtils {
 
@@ -21,7 +21,7 @@ public class VOUtils {
     }
     
     public static void printViewObjectInfo(ViewObject vo){
-       VOUtilsImpl.printViewObjectInfo(vo);
+        VOUtilsImpl.printViewObjectInfo(vo);
     }
     
     // GET

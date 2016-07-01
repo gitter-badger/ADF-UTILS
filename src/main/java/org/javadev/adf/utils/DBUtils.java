@@ -3,7 +3,7 @@ package org.javadev.adf.utils;
 import oracle.jbo.server.ApplicationModuleImpl;
 import oracle.jbo.server.DBTransaction;
 
-import org.javadev.adf.utils.vo.CONSTANTS_VO;
+import org.javadev.adf.utils.impl.vo.CONSTANTS_VO;
 
 public class DBUtils {
         
