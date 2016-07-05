@@ -2,7 +2,7 @@
 
 JDK, Maven should be installed.
 
-Before, you should accept license:  
+You should accept the license before:  
 https://www.oracle.com/webapps/maven/register/license.html
 
 <br/>
