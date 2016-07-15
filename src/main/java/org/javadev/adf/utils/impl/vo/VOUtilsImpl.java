@@ -25,6 +25,7 @@ public class VOUtilsImpl {
        
        printViewObjectSQLQuery(vo);
        printViewObjectVariables(vo);
+       printViewObjectAttributes(vo);
        printViewObjectData(vo);
        
        System.out.println();
@@ -62,6 +63,33 @@ public class VOUtilsImpl {
         }
     }
     
+    
+    private static void printViewObjectAttributes(ViewObject vo){
+           System.out.println();
+           System.out.println("=== ViewObject ATTRIBUTES =====");
+           
+            vo.reset();
+            vo.first();
+            Row row = vo.getCurrentRow();
+            
+            String viewObjName = vo.getName();
+                System.out.println("Printing attribute for a row in VO '"+ viewObjName+"'");
+                StructureDef def = row.getStructureDef();
+                StringBuilder sb = new StringBuilder();
+                int numAttrs = def.getAttributeCount();
+                AttributeDef[] attrDefs = def.getAttributeDefs();
+                for (int z = 0; z < numAttrs; z++) {
+                  Object value = row.getAttribute(z);
+                  sb.append(z > 0 ? "  " : "")
+                    .append(attrDefs[z].getName())
+                    .append("=")
+                    .append(value == null ? "<null>" : value)
+                    .append(z < numAttrs - 1 ? "\n" : "");
+                }
+                System.out.println(sb.toString());
+    
+                System.out.println("=== NO MORE ATTRIBUTES =====");
+    }
     
     private static void printViewObjectData(ViewObject vo){
            System.out.println();
