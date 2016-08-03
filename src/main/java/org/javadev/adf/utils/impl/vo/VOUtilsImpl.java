@@ -1,10 +1,13 @@
 package org.javadev.adf.utils.impl.vo;
 
 import oracle.jbo.ApplicationModule;
+import oracle.jbo.AttributeDef;
 import oracle.jbo.ViewObject;
 import oracle.jbo.VariableValueManager;
 import oracle.jbo.Variable;
 import oracle.jbo.Row;
+
+import oracle.jbo.StructureDef;
 
 import org.javadev.adf.utils.ADFUtils;
 
