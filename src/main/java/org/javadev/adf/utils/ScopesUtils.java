@@ -1,13 +1,73 @@
 package org.javadev.adf.utils;
 
+import java.util.Enumeration;
 import java.util.Map;
-
-import javax.faces.event.ActionEvent;
-
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import oracle.adf.share.ADFContext;
 import oracle.adf.view.rich.context.AdfFacesContext;
+import java.util.Set;
+import javax.faces.context.FacesContext;
 
 public class ScopesUtils {
+    
+    ///////////////////////////////////////////////
+    // SessionScope
+    ///////////////////////////////////////////////    
+    
+    // Print All Session Objects
+    
+    public static void printSessionScope(){
+        
+        HttpSession session =  getSession();
+        
+        Enumeration sessionNames = session.getAttributeNames();
+        String sessionName = null;
+        Object sessionValue = null;
+
+        while (sessionNames.hasMoreElements()) {
+          sessionName = (String)sessionNames.nextElement();
+          sessionValue = session.getAttribute(sessionName);
+          System.out.println("\t Session name: " + sessionName +
+                             ", value: " + sessionValue);
+        }
+    }
+    
+    // ------------------------------------------------------------------
+    
+    public static HttpSession getSession() {
+            ExternalContext ectx = FacesContext.getCurrentInstance().getExternalContext();
+            HttpServletRequest request = (HttpServletRequest)ectx.getRequest();
+            return request.getSession();
+    }
+    
+    // ------------------------------------------------------------------
+    
+    // Write Attribute to session
+    
+    public static void setStringAttributeToSession(String attrName, String attrValue){
+        getSession().setAttribute(attrName, attrValue);
+    }
+    
+    public static String getStringAttributeFromSession(String attrName){
+        return (String)getSession().getAttribute(attrName);
+    }
+    
+    // Write Object to Session
+    
+    public static void writeObjectToSession(String objName, Object obj) {
+        getSession().setAttribute(objName, obj);     
+    }
+    
+    public static Object getObjectFromSession(String objName) {       
+        Object res = (Object) getSession().getAttribute(objName);
+        return res;
+    }
+    
+    /////////////////////////////////////////////
+    
     
     ///////////////////////////////////////////////
     // PageFlowScope
@@ -22,7 +82,25 @@ public class ScopesUtils {
         System.out.println("value: " + scopeVar.get(key));
       }
     }
-
+    
+    
+    public static void printPageFlowScope(){
+        
+        AdfFacesContext adfFacesContext = null;
+        adfFacesContext = AdfFacesContext.getCurrentInstance();
+        Map _pageFlowScope = adfFacesContext.getPageFlowScope();
+        
+        Set<Map.Entry<String, Object>> entrySet = _pageFlowScope.entrySet();
+        
+        for (Map.Entry<String, Object> entry : entrySet) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+            
+            System.out.println("[key] " + key );
+            System.out.println("[value] " + value.toString());
+        }
+    }
+    
     public static void setVarToPageFlowScope(String varNameInPageFlowScope, String newValue){
         ADFContext.getCurrent().getPageFlowScope().put(varNameInPageFlowScope, newValue);
     }
