@@ -5,6 +5,8 @@ https://gist.github.com/biemond/1248752
 
 # ADF-UTILS
 
+[![Join the chat at https://gitter.im/ADF-UTILS/Lobby](https://badges.gitter.im/ADF-UTILS/Lobby.svg)](https://gitter.im/ADF-UTILS/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 JDK, Maven should be installed.
 
 You should accept the license before:  
